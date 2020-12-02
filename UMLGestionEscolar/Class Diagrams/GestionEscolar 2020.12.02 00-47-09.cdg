@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="GestionEscolar">
+  <ClassDiagramComponents>
+    <Class name="GestionEscolar" package="gestionescolar" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AbstracControlador" package="ups.edu.ec.controlador" visibility="public" isAbstract="true" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="lista" type="List&lt;E&gt;" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="cargarDatos" returnType="void" visibility="public">
+          <Argument type="String" name="ruta"/>
+        </Method>
+        <Method name="guardarDatos" returnType="void" visibility="public">
+          <Argument type="String" name="ruta"/>
+        </Method>
+        <Method name="crear" returnType="boolean" visibility="public">
+          <Argument type="E" name="objeto"/>
+        </Method>
+        <Method name="buscar" returnType="E" visibility="public">
+          <Argument type="E" name="comparacion"/>
+        </Method>
+        <Method name="eliminar" returnType="boolean" visibility="public">
+          <Argument type="E" name="objeto"/>
+        </Method>
+        <Method name="buscarPosicion" returnType="int" visibility="public">
+          <Argument type="E" name="comparacion"/>
+        </Method>
+        <Method name="actualizar" returnType="boolean" visibility="public">
+          <Argument type="E" name="objeto"/>
+        </Method>
+        <Method name="getLista" returnType="List&lt;E&gt;" visibility="public"/>
+        <Method name="setLista" returnType="void" visibility="public">
+          <Argument type="List&lt;E&gt;" name="lista"/>
+        </Method>
+        <Method name="validar" returnType="boolean" visibility="public" isAbstract="true">
+          <Argument type="E" name="objeto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ControladorAlumno" package="ups.edu.ec.controlador" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="validar" returnType="boolean" visibility="public">
+          <Argument type="Alumno" name="objeto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ControladorCurso" package="ups.edu.ec.controlador" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="validar" returnType="boolean" visibility="public">
+          <Argument type="CursoRec" name="objeto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ControladorDocente" package="ups.edu.ec.controlador" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="validar" returnType="boolean" visibility="public">
+          <Argument type="DocenteRec" name="objeto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ControladorRegex" package="ups.edu.ec.controlador" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="patron" type="Pattern" visibility="private"/>
+        <Field name="corpus" type="Matcher" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="ingresarRegex" returnType="void" visibility="public">
+          <Argument type="String" name="regex"/>
+        </Method>
+        <Method name="validar" returnType="boolean" visibility="public">
+          <Argument type="String" name="text"/>
+        </Method>
+        <Method name="obtenerUrlPlay" returnType="Set&lt;String&gt;" visibility="public">
+          <Argument type="String" name="texto"/>
+        </Method>
+        <Method name="getPatron" returnType="Pattern" visibility="public"/>
+        <Method name="setPatron" returnType="void" visibility="public">
+          <Argument type="Pattern" name="patron"/>
+        </Method>
+        <Method name="getCorpus" returnType="Matcher" visibility="public"/>
+        <Method name="setCorpus" returnType="void" visibility="public">
+          <Argument type="Matcher" name="corpus"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Alumno" package="ups.edu.ec.modelo" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="nombreestudainte" type="String" visibility="private"/>
+        <Field name="curso" type="String" visibility="private"/>
+        <Field name="actividad" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="nombreestudainte"/>
+          <Argument type="String" name="curso"/>
+          <Argument type="String" name="actividad"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getNombreestudainte" returnType="String" visibility="public"/>
+        <Method name="setNombreestudainte" returnType="void" visibility="public">
+          <Argument type="String" name="nombreestudainte"/>
+        </Method>
+        <Method name="getCurso" returnType="String" visibility="public"/>
+        <Method name="setCurso" returnType="void" visibility="public">
+          <Argument type="String" name="curso"/>
+        </Method>
+        <Method name="getActividad" returnType="String" visibility="public"/>
+        <Method name="setActividad" returnType="void" visibility="public">
+          <Argument type="String" name="actividad"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="obj"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CursoRec" package="ups.edu.ec.modelo" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="nombreCurso" type="String" visibility="private"/>
+        <Field name="nAlumnos" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="nombreCurso"/>
+          <Argument type="String" name="nAlumnos"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getNombreCurso" returnType="String" visibility="public"/>
+        <Method name="setNombreCurso" returnType="void" visibility="public">
+          <Argument type="String" name="nombreCurso"/>
+        </Method>
+        <Method name="getnAlumnos" returnType="String" visibility="public"/>
+        <Method name="setnAlumnos" returnType="void" visibility="public">
+          <Argument type="String" name="nAlumnos"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="DocenteRec" package="ups.edu.ec.modelo" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="nombreDocente" type="String" visibility="private"/>
+        <Field name="apellidoDocente" type="String" visibility="private"/>
+        <Field name="cedula" type="String" visibility="private"/>
+        <Field name="curso" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="nombreDocente"/>
+          <Argument type="String" name="apellidoDocente"/>
+          <Argument type="String" name="cedula"/>
+          <Argument type="String" name="curso"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getNombreDocente" returnType="String" visibility="public"/>
+        <Method name="setNombreDocente" returnType="void" visibility="public">
+          <Argument type="String" name="nombreDocente"/>
+        </Method>
+        <Method name="getApellidoDocente" returnType="String" visibility="public"/>
+        <Method name="setApellidoDocente" returnType="void" visibility="public">
+          <Argument type="String" name="apellidoDocente"/>
+        </Method>
+        <Method name="getCedula" returnType="String" visibility="public"/>
+        <Method name="setCedula" returnType="void" visibility="public">
+          <Argument type="String" name="cedula"/>
+        </Method>
+        <Method name="getCurso" returnType="String" visibility="public"/>
+        <Method name="setCurso" returnType="void" visibility="public">
+          <Argument type="String" name="curso"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="obj"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="VisaAlumnos" package="ups.edu.ec.vista" visibility="public" xPosition="320.0" yPosition="420.0">
+      <Fields>
+        <Field name="controladorAlumno" type="ControladorAlumno" visibility="package"/>
+        <Field name="controladorRegex" type="ControladorRegex" visibility="package"/>
+        <Field name="ruta" type="String" visibility="public" isStatic="true"/>
+        <Field name="modeloAlumno" type="DefaultTableModel" visibility="package"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jList1" type="javax.swing.JList&lt;String&gt;" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane2" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jTable1" type="javax.swing.JTable" visibility="private"/>
+        <Field name="txtbuscarplay" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="listarDatos" returnType="void" visibility="public"/>
+        <Method name="CrearModeloAlumno" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="BuscarActividad" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="VistaDocentes" package="ups.edu.ec.vista" visibility="public" xPosition="620.0" yPosition="420.0">
+      <Fields>
+        <Field name="controladorAlumno" type="ControladorAlumno" visibility="package"/>
+        <Field name="controladorCurso" type="ControladorCurso" visibility="package"/>
+        <Field name="modeloAlumno" type="DefaultTableModel" visibility="package"/>
+        <Field name="ruta" type="String" visibility="public" isStatic="true"/>
+        <Field name="ruta2" type="String" visibility="public" isStatic="true"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jTable1" type="javax.swing.JTable" visibility="private"/>
+        <Field name="txtactividad" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtcursoestudiante" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtidestudiante" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtnombreEstudiante" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="cargarDatosAlumno" returnType="void" visibility="public">
+          <Argument type="int" name="posicion"/>
+        </Method>
+        <Method name="listarDatos" returnType="void" visibility="public"/>
+        <Method name="CrearModeloAlumno" returnType="void" visibility="private"/>
+        <Method name="verificarcurso" returnType="void" visibility="public"/>
+        <Method name="tomarDatos" returnType="void" visibility="public"/>
+        <Method name="limpiar" returnType="void" visibility="public"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="formWindowClosing" returnType="void" visibility="private">
+          <Argument type="java.awt.event.WindowEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="VistaInicio" package="ups.edu.ec.vista" visibility="public" xPosition="920.0" yPosition="420.0">
+      <Fields>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton3" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="txtcontra" type="javax.swing.JPasswordField" visibility="private"/>
+        <Field name="txtusuario" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton3ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="VistaRectorAdmin" package="ups.edu.ec.vista" visibility="public" xPosition="1220.0" yPosition="420.0">
+      <Fields>
+        <Field name="controladorDocente" type="ControladorDocente" visibility="package"/>
+        <Field name="controladorCurso" type="ControladorCurso" visibility="package"/>
+        <Field name="modeloDocente" type="DefaultTableModel" visibility="package"/>
+        <Field name="modeloCurso" type="DefaultTableModel" visibility="package"/>
+        <Field name="ruta" type="String" visibility="public" isStatic="true"/>
+        <Field name="ruta2" type="String" visibility="public" isStatic="true"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel10" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel11" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel12" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel8" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel9" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane2" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jTable1" type="javax.swing.JTable" visibility="private"/>
+        <Field name="jTable2" type="javax.swing.JTable" visibility="private"/>
+        <Field name="txtapellidodocente" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtceduladocente" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtcursodocente" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtidcurso" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtiddocente" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtnalmunoscurso" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtnombrecurso" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtnombredocente" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="CrearModeloDocente" returnType="void" visibility="private"/>
+        <Method name="CrearModeloCurso" returnType="void" visibility="private"/>
+        <Method name="listarDatosDocente" returnType="void" visibility="public"/>
+        <Method name="listarDatosCurso" returnType="void" visibility="public"/>
+        <Method name="initComponents" returnType="void" visibility="private"/>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="formWindowClosing" returnType="void" visibility="private">
+          <Argument type="java.awt.event.WindowEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="verificarcurso" returnType="void" visibility="public"/>
+        <Method name="cargarDatosDocnete" returnType="void" visibility="public">
+          <Argument type="int" name="posicion"/>
+        </Method>
+        <Method name="cargarDatosCurso" returnType="void" visibility="public">
+          <Argument type="int" name="posicion"/>
+        </Method>
+        <Method name="limpiardocente" returnType="void" visibility="public"/>
+        <Method name="limpiarcurso" returnType="void" visibility="public"/>
+        <Method name="tomarDatosDocente" returnType="void" visibility="public"/>
+        <Method name="tomarDatosCurso" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="ups.edu.ec.controlador.ControladorCurso" target="ups.edu.ec.controlador.AbstracControlador"/>
+    <HasRelation name="controladorAlumno" source="ups.edu.ec.vista.VisaAlumnos" target="ups.edu.ec.controlador.ControladorAlumno" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="controladorAlumno" source="ups.edu.ec.vista.VistaDocentes" target="ups.edu.ec.controlador.ControladorAlumno" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ups.edu.ec.controlador.ControladorCurso" target="ups.edu.ec.modelo.CursoRec" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="controladorCurso" source="ups.edu.ec.vista.VistaRectorAdmin" target="ups.edu.ec.controlador.ControladorCurso" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="controladorRegex" source="ups.edu.ec.vista.VisaAlumnos" target="ups.edu.ec.controlador.ControladorRegex" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="controladorCurso" source="ups.edu.ec.vista.VistaDocentes" target="ups.edu.ec.controlador.ControladorCurso" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ups.edu.ec.controlador.ControladorAlumno" target="ups.edu.ec.modelo.Alumno" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="controladorDocente" source="ups.edu.ec.vista.VistaRectorAdmin" target="ups.edu.ec.controlador.ControladorDocente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="ups.edu.ec.controlador.ControladorDocente" target="ups.edu.ec.controlador.AbstracControlador"/>
+    <UseRelation source="ups.edu.ec.controlador.ControladorDocente" target="ups.edu.ec.modelo.DocenteRec" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="ups.edu.ec.controlador.ControladorAlumno" target="ups.edu.ec.controlador.AbstracControlador"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
